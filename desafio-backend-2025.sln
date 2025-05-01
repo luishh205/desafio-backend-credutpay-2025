@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "desafio-backend-2025", "desafio-backend-2025\desafio-backend-2025.csproj", "{B30B5B3F-6883-4A79-9C7A-C6043F3058CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EBE1D02-92FA-47AA-B078-BEACA8AC634C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{4830B76C-0413-4B05-AF08-48BEE78860A3}"
+	ProjectSection(SolutionItems) = preProject
+		README_DOCUMENTACAO.md = README_DOCUMENTACAO.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B30B5B3F-6883-4A79-9C7A-C6043F3058CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30B5B3F-6883-4A79-9C7A-C6043F3058CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30B5B3F-6883-4A79-9C7A-C6043F3058CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30B5B3F-6883-4A79-9C7A-C6043F3058CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C51DA161-C1A6-4DF5-A16A-DF3B6B9E7053}
+	EndGlobalSection
+EndGlobal
