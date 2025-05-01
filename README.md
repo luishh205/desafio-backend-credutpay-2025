@@ -28,7 +28,7 @@ Depois, você pode verificar a instalação no terminal com:
 git --version
 
 Clonar o repositório: No terminal, vá para o diretório onde você deseja clonar o projeto e execute o comando
-git clone https://github.com/luishh205/desafio-backend-2025
+git clone https://github.com/luishh205/desafio-backend-credutpay-2025
 
 Acessar o diretório do projeto:
 cd seu-repositorio
@@ -46,7 +46,7 @@ Importe o banco de dados usando o MySQL:
 Abra o terminal ou prompt de comando e navegue até o diretório onde o MySQL está instalado ou onde o binário mysql está disponível.
 
 Execute o comando para importar o banco de dados:
-mysql -u root -p nome_do_banco < caminho_para_o_arquivo/banco-desafio-backend-2025.sql
+mysql -u root -p nome_do_banco < caminho_para_o_arquivo/desafio-backend-credutpay-2025.sql
 
 nome_do_banco: O nome do banco de dados que você deseja importar (se não existir, crie primeiro com CREATE DATABASE nome_do_banco;).
 caminho_para_o_arquivo/banco_crud.sql: Caminho completo do arquivo .sql que contém os dados do banco.
