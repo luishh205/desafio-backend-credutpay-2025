@@ -1,322 +1,323 @@
-Documentação da API - Usuário
+Documentaï¿½ï¿½o da API - Usuï¿½rio
 
 Endpoint: GET /api/usuario
-Descrição: Retorna uma lista de todos os usuários cadastrados no banco de dados.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Retorna uma lista de todos os usuï¿½rios cadastrados no banco de dados.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Modelo de retorno 
+Modelo de retorno
 {
-  "success": true,
-  "data": [
-    {
-      "id": 1,
-      "email": "usuario1@example.com",
-      "password": "senha123"
-    }
-  ],
-  "message": null
+"success": true,
+"data": [
+{
+"id": 1,
+"email": "usuario1@example.com",
+"password": "senha123"
+}
+],
+"message": null
 }
 
 Endpoint: GET /api/usuario/{id}
-Descrição: Retorna os detalhes de um usuário com base no ID fornecido.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Retorna os detalhes de um usuï¿½rio com base no ID fornecido.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Modelo de retorno 
+Modelo de retorno
 {
-  "success": true,
-  "data": {
-    "id": 1,
-    "email": "usuario1@example.com",
-    "password": "senha123"
-  },
-  "message": null
+"success": true,
+"data": {
+"id": 1,
+"email": "usuario1@example.com",
+"password": "senha123"
+},
+"message": null
 }
 
 Endpoint: POST /api/usuario/register
-Descrição: Cria um novo usuário com os dados fornecidos.
-Autenticação: Não requer autenticação.
+Descriï¿½ï¿½o: Cria um novo usuï¿½rio com os dados fornecidos.
+Autenticaï¿½ï¿½o: Nï¿½o requer autenticaï¿½ï¿½o.
 
-Corpo da Requisição:
+Corpo da Requisiï¿½ï¿½o:
 {
-  "email": "novo_usuario@example.com",
-  "password": "senha123"
-}
-
-Modelo de retorno 
-{
-  "success": true,
-  "data": 1, retorna o id do usuario
-  "message": null
-}
-
-
-Endpoint: POST /api/usuario/login
-Descrição: Realiza o login do usuário e retorna um token JWT.
-Autenticação: Não requer autenticação.
-
-Corpo da Requisição:
-{
-  "email": "usuario@example.com",
-  "password": "senha123"
+"email": "novo_usuario@example.com",
+"password": "senha123"
 }
 
 Modelo de retorno
 {
-  "success": true,
-  "data": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-  },
-  "message": null
+"success": true,
+"data": 1, retorna o id do usuario
+"message": null
+}
+
+Endpoint: POST /api/usuario/login
+Descriï¿½ï¿½o: Realiza o login do usuï¿½rio e retorna um token JWT.
+Autenticaï¿½ï¿½o: Nï¿½o requer autenticaï¿½ï¿½o.
+
+Corpo da Requisiï¿½ï¿½o:
+{
+"email": "usuario@example.com",
+"password": "senha123"
+}
+
+Modelo de retorno
+{
+"success": true,
+"data": {
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+},
+"message": null
 }
 
 Endpoint: PUT /api/usuario
-Descrição: Atualiza os dados de um usuário existente.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Atualiza os dados de um usuï¿½rio existente.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Corpo da Requisição:
+Corpo da Requisiï¿½ï¿½o:
 {
-  "id": 1,
-  "email": "usuario_atualizado@example.com",
-  "password": "nova_senha123"
+"id": 1,
+"email": "usuario_atualizado@example.com",
+"password": "nova_senha123"
 }
 
 Modelo de retorno
 {
-  "success": false,
-  "data": null,
-  "message": "Dados inválidos fornecidos."
+"success": false,
+"data": null,
+"message": "Dados invï¿½lidos fornecidos."
 }
 
 Endpoint: DELETE /api/usuario/{id}
-Descrição: Exclui um usuário com base no ID fornecido.
-Autenticação: Requer token JWT.
-
-Modelo de retorno 
-{
-  "success": false,
-  "data": null,
-  "message": "Usuário com ID 1 não encontrado."
-}
-
-Documentação da API - Conta
-
-Endpoint: GET /api/contas
-Descrição: Retorna uma lista de todas as contas cadastradas no banco de dados.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Exclui um usuï¿½rio com base no ID fornecido.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
 Modelo de retorno
 {
-  "success": true,
-  "data": [
-    {
-      "id": 1,
-      "nome": "Empresa A",
-      "endereco": "",
-      "email": "empresaA@example.com",
-      "telefone": "11999999999",
-      "cpf": "12345678000100",
-      "numeroConta": 12345,
-      "agencia": 6789,
-    }
-  ],
-  "message": null
+"success": false,
+"data": null,
+"message": "Usuï¿½rio com ID 1 nï¿½o encontrado."
+}
+
+Documentaï¿½ï¿½o da API - Conta
+
+Endpoint: GET /api/contas
+Descriï¿½ï¿½o: Retorna uma lista de todas as contas cadastradas no banco de dados.
+Autenticaï¿½ï¿½o: Requer token JWT.
+
+Modelo de retorno
+{
+"success": true,
+"data": [
+{
+"id": 1,
+"nome": "Empresa A",
+"endereco": "",
+"email": "empresaA@example.com",
+"telefone": "11999999999",
+"cpf": "12345678000100",
+"numeroConta": 12345,
+"agencia": 6789,
+}
+],
+"message": null
 }
 
 Endpoint: GET /api/contas/{id}
-Descrição: Retorna os detalhes de uma conta com base no ID fornecido.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Retorna os detalhes de uma conta com base no ID fornecido.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
 Modelo de retorno
 {
-  "success": true,
-  "data": {
-    "id": 1,
-    "nome": "Empresa A",
-    "endero": "",
-    "email": "empresaA@example.com",
-    "telefone": "11999999999",
-    "cpf": "12345678000100",
-    "numeroConta": 12345,
-    "agencia": 6789,
-  },
-  "message": null
+"success": true,
+"data": {
+"id": 1,
+"nome": "Empresa A",
+"endero": "",
+"email": "empresaA@example.com",
+"telefone": "11999999999",
+"cpf": "12345678000100",
+"numeroConta": 12345,
+"agencia": 6789,
+},
+"message": null
 }
 
 Endpoint: POST /api/contas
-Descrição: Cria uma nova conta com os dados fornecidos.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Cria uma nova conta com os dados fornecidos.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Corpo da Requisição:
+Corpo da Requisiï¿½ï¿½o:
 Formato: multipart/form-data
 Campos:
-cpf (string, obrigatório): cpf .
-numeroConta (int, obrigatório): Número da conta.
-agencia (int, obrigatório): Agência da conta.
-endereco (string, obrigatório)
-nome (string, obrigatório)
-email (string, obrigatório)
+cpf (string, obrigatï¿½rio): cpf .
+numeroConta (int, obrigatï¿½rio): Nï¿½mero da conta.
+agencia (int, obrigatï¿½rio): Agï¿½ncia da conta.
+endereco (string, obrigatï¿½rio)
+nome (string, obrigatï¿½rio)
+email (string, obrigatï¿½rio)
 
-Modelo de retorno 
+Modelo de retorno
 {
-  "success": true,
-  "data": 1, // ID da conta criada
-  "message": null
+"success": true,
+"data": 1, // ID da conta criada
+"message": null
 }
 
 Endpoint: PUT /api/contas
-Descrição: Atualiza os dados de uma conta existente.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Atualiza os dados de uma conta existente.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Corpo da Requisição:
+Corpo da Requisiï¿½ï¿½o:
 Formato: multipart/form-data
 Campos:
-id (int, obrigatório): ID da conta.
-cpf (string, obrigatório):
-numeroConta (int, obrigatório): Número da conta.
-agencia (int, obrigatório): Agência da conta.
+id (int, obrigatï¿½rio): ID da conta.
+cpf (string, obrigatï¿½rio):
+numeroConta (int, obrigatï¿½rio): Nï¿½mero da conta.
+agencia (int, obrigatï¿½rio): Agï¿½ncia da conta.
 
-Modelo de retorno 
+Modelo de retorno
 {
-  "success": true,
-  "data": 1, // ID da conta atualizada
-  "message": null
+"success": true,
+"data": 1, // ID da conta atualizada
+"message": null
 }
 
 Endpoint: DELETE /api/contas/{id}
-Descrição: Exclui uma conta com base no ID fornecido.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Exclui uma conta com base no ID fornecido.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Parâmetros:
-id (int, obrigatório): ID da conta.
+Parï¿½metros:
+id (int, obrigatï¿½rio): ID da conta.
 
 Modelo de retorno
 {
-  "success": false,
-  "data": null,
-  "message": "Conta com ID 1 não encontrada."
+"success": false,
+"data": null,
+"message": "Conta com ID 1 nï¿½o encontrada."
 }
 
-Documentação da API - Transação
+Documentaï¿½ï¿½o da API - Transaï¿½ï¿½o
 
 Endpoint: GET /api/transacao/saldo/{id}
-Descrição: Retorna o saldo atual de uma conta com base no ID fornecido.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Retorna o saldo atual de uma conta com base no ID fornecido.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
 Modelo de retorno
 {
-    "success": true,
-    "message": null,
-    "data": [
-        {
-            "id": 0,
-            "valor": 0,
-            "saldo": 500000.60,
-            "tipo": 0,
-            "tipoNome": "Saldo",
-            "contaId": 22,
-            "contaDestinoId": 0,
-            "dataTransacao": "0001-01-01T00:00:00",
-            "conta": {
-                "id": 22,
-                "cpf": "19368947000188",
-                "numeroConta": 1012,
-                "agencia": 1020,
-                "nome": "AM COMERCIO DE MATERIAIS LTDA",
-                "email": "amcomercio@globomail.com",
-                "telefone": "(21) 3254-2017 / (21) 3254-2027"
-            },
-            "contaDestino": null
-        }
-    ]
+"success": true,
+"message": null,
+"data": [
+{
+"id": 0,
+"valor": 0,
+"saldo": 500000.60,
+"tipo": 0,
+"tipoNome": "Saldo",
+"contaId": 22,
+"contaDestinoId": 0,
+"dataTransacao": "0001-01-01T00:00:00",
+"conta": {
+"id": 22,
+"cpf": "19368947000188",
+"numeroConta": 1012,
+"agencia": 1020,
+"nome": "AM COMERCIO DE MATERIAIS LTDA",
+"email": "amcomercio@globomail.com",
+"telefone": "(21) 3254-2017 / (21) 3254-2027"
+},
+"contaDestino": null
+}
+]
 }
 
 Endpoint: GET /api/transacao/extrato/{id}
-Descrição: Retorna o extrato de transações de uma conta com base no ID fornecido.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Retorna o extrato de transaï¿½ï¿½es de uma conta com base no ID fornecido, com filtro de perÃ­odo opcional.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Parâmetros:
-id (int, obrigatório): ID da conta.
+Parï¿½metros:
+id (int, obrigatï¿½rio): ID da conta.
+dataInicial(dateTime):2025-05-01 21:37:47
+dataFinal(dateTime):2025-05-01 21:38:53
 
 Modelo de retorno
 {
-    "success": true,
-    "message": null,
-    "data": [
-        {
-            "id": 96,
-            "valor": 500000.00,
-            "saldo": 0,
-            "tipo": 2,
-            "tipoNome": "Deposito",
-            "contaId": 22,
-            "contaDestinoId": 0,
-            "dataTransacao": "2025-03-15T22:39:08-03:00",
-            "conta": {
-                "id": 22,
-                "cpf": "19368947000188",
-                "numeroConta": 1012,
-                "agencia": 1020,
-                "nome": "AM COMERCIO DE MATERIAIS LTDA",
-                "endereco": "AM PAPELARIA",
-                "email": "amcomercio@globomail.com",
-                "telefone": "(21) 3254-2017 / (21) 3254-2027"
-            },
-            "contaDestino": {
-                "id": 0,
-                "cpf": "00.000.000/0001-00",
-                "numeroConta": 0,
-                "agencia": 0,
-                "nome": null,
-                "endereco": null,
-                "email": null,
-                "telefone": null
-            }
-        }
-        ]
+"success": true,
+"message": null,
+"data": [
+{
+"id": 96,
+"valor": 500000.00,
+"saldo": 0,
+"tipo": 2,
+"tipoNome": "Deposito",
+"contaId": 22,
+"contaDestinoId": 0,
+"dataTransacao": "2025-03-15T22:39:08-03:00",
+"conta": {
+"id": 22,
+"cpf": "19368947000188",
+"numeroConta": 1012,
+"agencia": 1020,
+"nome": "AM COMERCIO DE MATERIAIS LTDA",
+"endereco": "AM PAPELARIA",
+"email": "amcomercio@globomail.com",
+"telefone": "(21) 3254-2017 / (21) 3254-2027"
+},
+"contaDestino": {
+"id": 0,
+"cpf": "00.000.000/0001-00",
+"numeroConta": 0,
+"agencia": 0,
+"nome": null,
+"endereco": null,
+"email": null,
+"telefone": null
+}
+}
+]
 }
 
 Endpoint: POST /api/transacao/deposito
-Descrição: Realiza um depósito em uma conta.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Realiza um depï¿½sito em uma conta.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Parâmetros:
-ContaId (int, obrigatório): ID da conta.
-Valor (decimal, obrigatório): Valor a ser transferido.
+Parï¿½metros:
+ContaId (int, obrigatï¿½rio): ID da conta.
+Valor (decimal, obrigatï¿½rio): Valor a ser transferido.
 
 Modelo de retorno
 {
-  "success": true,
-  "data": true,
-  "message": null
+"success": true,
+"data": true,
+"message": null
 }
 
 Endpoint: POST /api/transacao/saque
-Descrição: Realiza um saque em uma conta.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Realiza um saque em uma conta.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Parâmetros:
-ContaId (int, obrigatório): ID da conta que realizará o saque.
-Valor (decimal, obrigatório): Valor a ser sacado.
+Parï¿½metros:
+ContaId (int, obrigatï¿½rio): ID da conta que realizarï¿½ o saque.
+Valor (decimal, obrigatï¿½rio): Valor a ser sacado.
 
 Modelo de retorno
 {
-  "success": true,
-  "data": true,
-  "message": null
+"success": true,
+"data": true,
+"message": null
 }
 
 Endpoint: POST /api/transacao/transferencia
-Descrição: Realiza uma transferência entre duas contas.
-Autenticação: Requer token JWT.
+Descriï¿½ï¿½o: Realiza uma transferï¿½ncia entre duas contas.
+Autenticaï¿½ï¿½o: Requer token JWT.
 
-Parâmetros:
-contaOrigemId (int, obrigatório): ID da conta de origem.
-contaDestinoId (int, obrigatório): ID da conta de destino.
-Valor (decimal, obrigatório): Valor a ser transferido.
+Parï¿½metros:
+contaOrigemId (int, obrigatï¿½rio): ID da conta de origem.
+contaDestinoId (int, obrigatï¿½rio): ID da conta de destino.
+Valor (decimal, obrigatï¿½rio): Valor a ser transferido.
 
 Modelo de retorno
 {
-  "success": true,
-  "data": true,
-  "message": null
+"success": true,
+"data": true,
+"message": null
 }

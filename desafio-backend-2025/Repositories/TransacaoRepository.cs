@@ -14,7 +14,7 @@ namespace desafio_backend_2025.Repositories
             _db = db;
         }
 
-        internal async Task<Response<IEnumerable<Transacao>>> GetExtratoContaId(int id)
+        internal async Task<Response<IEnumerable<Transacao>>> GetExtratoContaId(int id, DateTime? dataInicial = null, DateTime? dataFinal = null)
         {
             try
             {
@@ -29,11 +29,28 @@ namespace desafio_backend_2025.Repositories
                     return Response<IEnumerable<Transacao>>.Error($"Conta com ID {id} não encontrada.");
                 }
 
+                //using var conn = _db.GetConnection();
+
+                //var extrato = await conn.QueryAsync<Transacao>(
+                //"SELECT * FROM transacoes WHERE contaId = @Id ORDER BY dataTransacao DESC",
+                //new { Id = id });
+
                 using var conn = _db.GetConnection();
 
+                var sql = @"SELECT * FROM transacoes 
+                    WHERE contaId = @Id";
+
+                if (dataInicial.HasValue)
+                    sql += " AND dataTransacao >= @DataInicial";
+
+                if (dataFinal.HasValue)
+                    sql += " AND dataTransacao <= @DataFinal";
+
+                sql += " ORDER BY dataTransacao DESC";
+
                 var extrato = await conn.QueryAsync<Transacao>(
-                "SELECT * FROM Transacoes WHERE contaId = @Id ORDER BY dataTransacao DESC",
-                new { Id = id });
+                    sql,
+                    new { Id = id, DataInicial = dataInicial, DataFinal = dataFinal });
 
                 foreach (var transacao in extrato)
                 {
@@ -265,7 +282,7 @@ namespace desafio_backend_2025.Repositories
                         DataTransacao = DateTime.Now
                     };
 
-                    string sql = @"INSERT INTO Transacoes (ContaId, Valor, Tipo, DataTransacao) 
+                    string sql = @"INSERT INTO transacoes (ContaId, Valor, Tipo, DataTransacao) 
                            VALUES (@ContaId, @Valor, 'saque', @DataTransacao);";
 
                     int retorno = await conn.ExecuteAsync(sql, transacao, transaction);
@@ -323,7 +340,7 @@ namespace desafio_backend_2025.Repositories
 
                 try
                 {
-                    string sqlOrigem = @"INSERT INTO Transacoes (ContaId, Valor, Tipo, DataTransacao, ContaDestinoId) 
+                    string sqlOrigem = @"INSERT INTO transacoes (ContaId, Valor, Tipo, DataTransacao, ContaDestinoId) 
                            VALUES (@ContaId, @Valor, 'transferencia', @DataTransacao, @ContaDestinoId);";
 
                     var transacaoOrigem = new Transacao
@@ -339,7 +356,7 @@ namespace desafio_backend_2025.Repositories
                         return Response<bool>.Error($"Falha ao inserir a transação no banco de dados. (TransacaoOrigem)");
                     }
 
-                    string sqlDestino = @"INSERT INTO Transacoes (ContaId, Valor, Tipo, DataTransacao) 
+                    string sqlDestino = @"INSERT INTO transacoes (ContaId, Valor, Tipo, DataTransacao) 
                            VALUES (@ContaId, @Valor, 'deposito', @DataTransacao);";
 
                     var transacaoDestino = new Transacao

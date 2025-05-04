@@ -46,18 +46,23 @@ namespace desafio_backend_2025.Controllers
         }
 
         /// <summary>
-        /// Obtém o extrato da conta pelo ID.
+        ///  Obtém o extrato da conta pelo ID, com filtro de período opcional.
         /// </summary>
         /// <param name="id">ID da conta</param>
-        /// <returns>Extrado da Conta com o ID especificado</returns>
+        /// <param name="dataInicial">Data inicial (opcional)</param>
+        /// <param name="dataFinal">Data final (opcional)</param>
+        /// <returns>Extrato da Conta com o ID especificado</returns>
         [Authorize]
         [HttpGet("extrato/{id}")]
-        [SwaggerOperation(Summary = "Obtém o extrato da conta pelo ID", Description = "Retorna o extrato da conta com base no ID fornecido.")]
-        public async Task<ActionResult<Transacao>> Extrato([FromRoute] int id)
+        [SwaggerOperation(Summary = "Obtém o extrato da conta pelo ID", Description = "Retorna o extrato da conta com base no ID fornecido e, opcionalmente, por período.")]
+        public async Task<ActionResult<Transacao>> Extrato(
+             [FromRoute] int id,
+             [FromQuery] DateTime? dataInicial,
+             [FromQuery] DateTime? dataFinal)
         {
             try
             {
-                var response = await _transacaoRepository.GetExtratoContaId(id);
+                var response = await _transacaoRepository.GetExtratoContaId(id, dataInicial, dataFinal);
                 if (!response.Success)
                 {
                     return NotFound(response);

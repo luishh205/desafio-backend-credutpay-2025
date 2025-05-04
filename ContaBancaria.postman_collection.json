@@ -26,7 +26,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": 0,\n  \"email\": \"fabiana@gmail.com\",\n  \"password\": \"1234\"\n}",
+							"raw": "{\n  \"id\": 0,\n  \"email\": \"lll@gmail.com\",\n  \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,7 +70,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/usuario/28",
+							"raw": "https://localhost:7260/api/usuario/32",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -79,7 +79,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"28"
+								"32"
 							]
 						}
 					},
@@ -106,7 +106,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/usuario/30",
+							"raw": "https://localhost:7260/api/usuario/31",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -115,7 +115,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"30"
+								"31"
 							]
 						}
 					},
@@ -147,7 +147,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": 30,\n  \"email\": \"fabiana@gmail.com\",\n  \"password\": \"456235625\"\n}",
+							"raw": "{\n  \"id\": 31,\n  \"email\": \"fabiana@gmail.com\",\n  \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -313,7 +313,7 @@
 								},
 								{
 									"key": "endereco",
-									"value": "piumhi",
+									"value": "piumhi7",
 									"type": "text"
 								}
 							]
@@ -373,12 +373,12 @@
 								},
 								{
 									"key": "NumeroConta",
-									"value": "1515",
+									"value": "1519",
 									"type": "text"
 								},
 								{
 									"key": "nome",
-									"value": "fabiana",
+									"value": "joaozinho",
 									"type": "text"
 								},
 								{
@@ -434,7 +434,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/contas/30",
+							"raw": "https://localhost:7260/api/contas/31",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -443,7 +443,7 @@
 							"path": [
 								"api",
 								"contas",
-								"30"
+								"31"
 							]
 						}
 					},
@@ -546,7 +546,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/transacao/saldo/22",
+							"raw": "https://localhost:7260/api/transacao/saldo/27",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -556,7 +556,7 @@
 								"api",
 								"transacao",
 								"saldo",
-								"22"
+								"27"
 							]
 						}
 					},
@@ -583,7 +583,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/transacao/extrato/23",
+							"raw": "https://localhost:7260/api/transacao/extrato/27?dataInicial=2025-05-01 21:37:47&dataFinal=2025-05-01 21:38:53",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -593,7 +593,17 @@
 								"api",
 								"transacao",
 								"extrato",
-								"23"
+								"27"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "2025-05-01 21:37:47"
+								},
+								{
+									"key": "dataFinal",
+									"value": "2025-05-01 21:38:53"
+								}
 							]
 						}
 					},
@@ -620,7 +630,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/transacao/deposito?ContaId=22&Valor=500000",
+							"raw": "https://localhost:7260/api/transacao/deposito?ContaId=27&Valor=10000",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -634,11 +644,11 @@
 							"query": [
 								{
 									"key": "ContaId",
-									"value": "22"
+									"value": "27"
 								},
 								{
 									"key": "Valor",
-									"value": "500000"
+									"value": "10000"
 								}
 							]
 						}
@@ -666,7 +676,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/transacao/saque?ContaId=22&Valor=500000",
+							"raw": "https://localhost:7260/api/transacao/saque?ContaId=27&Valor=10000",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -680,11 +690,11 @@
 							"query": [
 								{
 									"key": "ContaId",
-									"value": "22"
+									"value": "27"
 								},
 								{
 									"key": "Valor",
-									"value": "500000"
+									"value": "10000"
 								}
 							]
 						}
@@ -712,7 +722,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7260/api/transacao/transferencia?contaOrigemId=22&contaDestinoId=23&Valor=800",
+							"raw": "https://localhost:7260/api/transacao/transferencia?contaOrigemId=27&contaDestinoId=28&Valor=10000",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -726,15 +736,15 @@
 							"query": [
 								{
 									"key": "contaOrigemId",
-									"value": "22"
+									"value": "27"
 								},
 								{
 									"key": "contaDestinoId",
-									"value": "23"
+									"value": "28"
 								},
 								{
 									"key": "Valor",
-									"value": "800"
+									"value": "10000"
 								}
 							]
 						}

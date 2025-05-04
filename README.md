@@ -1,5 +1,6 @@
-
 O projeto utiliza as seguintes tecnologias principais:
+
+    Docker: Para rodar o banco de dados MySQL.
 
     .NET 8: Framework para o desenvolvimento da API.
 
@@ -9,18 +10,12 @@ O projeto utiliza as seguintes tecnologias principais:
 
     MySQL: Banco de dados relacional para persistência de dados.
 
-    HttpClient: Para consumo de APIs externas.
-
     ASP.NET Core: Para configuração de autenticação, autorização e gerenciamento de requisições HTTP.
-
-    MultipartFormData: Para upload de arquivos, como imagens, na API
-
 
 Preparação para Colocar o Desafio em Funcionamento: Configuração de Banco de Dados, Rotas da API e Execução do Projeto C# .NET 8
 
-
 1. Clonar o Repositório GitHub
-Primeiro, você precisa clonar o repositório do GitHub para sua máquina local.
+   Primeiro, você precisa clonar o repositório do GitHub para sua máquina local.
 
 Instalar o Git: Se você ainda não tem o Git instalado, faça o download do Git.
 
@@ -34,25 +29,14 @@ Acessar o diretório do projeto:
 cd seu-repositorio
 
 2. Instalar Dependências
-Restaurar as dependências do projeto C#: Uma vez dentro do diretório do projeto, execute o comando para restaurar as dependências do projeto:
-dotnet restore
-Isso garante que todas as dependências listadas no arquivo .csproj sejam instaladas.
+   Restaurar as dependências do projeto C#: Uma vez dentro do diretório do projeto, execute o comando para restaurar as dependências do projeto:
+   dotnet restore
+   Isso garante que todas as dependências listadas no arquivo .csproj sejam instaladas.
 
-3. Importar o Arquivo do Banco de Dados MySQL
-Passos:
-Localize o arquivo .sql dentro do projeto.
-
-Importe o banco de dados usando o MySQL:
-Abra o terminal ou prompt de comando e navegue até o diretório onde o MySQL está instalado ou onde o binário mysql está disponível.
-
-Execute o comando para importar o banco de dados:
-mysql -u root -p nome_do_banco < caminho_para_o_arquivo/banco-desafio-backend-2025.sql
-
-nome_do_banco: O nome do banco de dados que você deseja importar (se não existir, crie primeiro com CREATE DATABASE nome_do_banco;).
-caminho_para_o_arquivo/banco_crud.sql: Caminho completo do arquivo .sql que contém os dados do banco.
-
-Verifique se o banco de dados foi importado corretamente: Você pode verificar no MySQL se as tabelas e os dados foram importados com o seguinte comando:
-SHOW TABLES;
+3. Rodar o Banco de Dados com Docker
+   Pré-requisito: Docker já instalado e funcionando em sua máquina.
+   Dentro da pasta raiz do projeto, onde está localizado o arquivo docker-compose.yml, execute: docker compose up -d
+   Esse comando iniciará o container do MySQL e importará o dump.sql automaticamente.
 
 4. Localize o arquivo do Postman dentro do projeto.
 
