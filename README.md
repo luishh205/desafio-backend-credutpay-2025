@@ -23,7 +23,7 @@ Depois, você pode verificar a instalação no terminal com:
 git --version
 
 Clonar o repositório: No terminal, vá para o diretório onde você deseja clonar o projeto e execute o comando
-git clone https://github.com/luishh205/desafio-backend-2025
+git clone https://github.com/luishh205/desafio-backend-credutpay-2025
 
 Acessar o diretório do projeto:
 cd seu-repositorio
@@ -33,10 +33,21 @@ cd seu-repositorio
    dotnet restore
    Isso garante que todas as dependências listadas no arquivo .csproj sejam instaladas.
 
-3. Rodar o Banco de Dados com Docker
-   Pré-requisito: Docker já instalado e funcionando em sua máquina.
-   Dentro da pasta raiz do projeto, onde está localizado o arquivo docker-compose.yml, execute: docker compose up -d
-   Esse comando iniciará o container do MySQL e importará o dump.sql automaticamente.
+3. Importar o Arquivo do Banco de Dados MySQL
+Passos:
+Localize o arquivo .sql dentro do projeto.
+
+Importe o banco de dados usando o MySQL:
+Abra o terminal ou prompt de comando e navegue até o diretório onde o MySQL está instalado ou onde o binário mysql está disponível.
+
+Execute o comando para importar o banco de dados:
+mysql -u root -p nome_do_banco < caminho_para_o_arquivo/banco-desafio-backend-2025.sql
+
+nome_do_banco: O nome do banco de dados que você deseja importar (se não existir, crie primeiro com CREATE DATABASE nome_do_banco;).
+caminho_para_o_arquivo/banco_crud.sql: Caminho completo do arquivo .sql que contém os dados do banco.
+
+Verifique se o banco de dados foi importado corretamente: Você pode verificar no MySQL se as tabelas e os dados foram importados com o seguinte comando:
+SHOW TABLES;
 
 4. Localize o arquivo do Postman dentro do projeto.
 
